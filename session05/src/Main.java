@@ -13,12 +13,5 @@ public class Main {
             // for you, but you can always add more by pressing Ctrl+F8.
             System.out.println("i = " + i);
         }
-
-        String fullName = "Nguyễn Văn A";
-        String demo = "Nguyễn Văn A";
-        String fullNameCut = fullName.substring(0,6);
-        System.out.println(fullNameCut);
-        System.out.println(fullName);
-
     }
 }
