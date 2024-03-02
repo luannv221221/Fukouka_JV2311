@@ -6,6 +6,9 @@ public abstract class Phone {
         System.out.println(" Tao là đin thoại đây");
     }
 
+    public Phone() {
+    }
+
     public abstract void nghe();
     public abstract void goi();
 
