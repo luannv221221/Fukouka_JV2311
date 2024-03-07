@@ -1,8 +1,9 @@
 package ra.itf;
 
-public interface IStudent {
-    static final int MARK_PASS = 5;
-    void inputData();
-    void displayData();
+import java.util.Scanner;
 
+public interface IStudent {
+    public static final float MARK_PASS = 5;
+    void  inputData(Scanner scanner);
+    void displayData();
 }

@@ -7,36 +7,46 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ManagementStudent {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        List<Student> list = new ArrayList<>();
+        List<Student> students = new ArrayList<>();
+        Student student = new Student();
         do {
-            System.out.println("********************************MENU*************************** \n" +
-                    "1.\tNhập thông tin n sinh viên \n" +
-                    "2.\tTính điểm trung bình sinh viên \n" +
-                    "3.\tXét điểm qua cho sinh viên \n" +
-                    "4.\tHiển thị thông tin sinh viên \n" +
-                    "5.\tThoát \n");
-            System.out.println("Moi ban chọn");
-            int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice){
+            System.out.println("""
+                    ********************************MENU***************************
+                         1.	Nhập thông tin n sinh viên
+                         2.	Tính điểm trung bình sinh viên
+                         3.	Xét điểm qua cho sinh viên
+                         4.	Hiển thị thông tin sinh viên
+                         5.	Thoát
+                    """);
+            System.out.println("Mời bạn chọn: ");
+            int chose = Integer.parseInt(scanner.nextLine());
+
+            switch (chose){
                 case 1:
-                    System.out.println("Mày muốn nhập bào nhiêu thằng ");
-                    int n = Integer.parseInt(scanner.nextLine());
-                    for (int i = 0; i < n; i++) {
-                        Student student = new Student();
-                        student.inputData();
-                        list.add(student);
-                    }
+                    // System.out.println("Mời bạn nhập số thông tin cần thêm: ");
+                    //     int studentNumber = Integer.parseInt(scanner.nextLine());
+                    System.out.println("Mời bạn nhập thông tin sinh viên: ");
+                    student.inputData(scanner);
+
                     break;
                 case 2:
-                    System.out.println("Danh sách sinh viên ");
-                    for (Student student : list) {
-                        student.displayData();
-                    }
+                    System.out.println("Điểm trung bình của học sinh là: "+student.getDiemTB());
                     break;
+                case 3:
+                    System.out.println(student.xetDiem());
+                    break;
+                case 4:
+                    student.displayData();
+                    break;
+                case 5:
+                    System.exit(0);
+                    break;
+                default:
+                    System.err.println("Mời bạn nhập lại từ 1-5");
             }
-        } while (true);
-
+        }while (true);
     }
 }
